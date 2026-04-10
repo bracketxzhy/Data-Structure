@@ -1,0 +1,82 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build project1 testMap",
+      "type": "shell",
+      "command": "C:\\Users\\brack\\.vscode\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=c++17",
+        "-fdiagnostics-color=always",
+        "-g",
+        "D:\\Desktop\\Data Structure\\project1\\Map.cpp",
+        "D:\\Desktop\\Data Structure\\project1\\testMap.cpp",
+        "-o",
+        "D:\\Desktop\\Data Structure\\project1\\testMap.exe"
+      ],
+      "options": {
+        "cwd": "D:\\Desktop\\Data Structure"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "build project1 testGamerMap",
+      "type": "shell",
+      "command": "C:\\Users\\brack\\.vscode\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=c++17",
+        "-fdiagnostics-color=always",
+        "-g",
+        "D:\\Desktop\\Data Structure\\project1\\Map.cpp",
+        "D:\\Desktop\\Data Structure\\project1\\GamerMap.cpp",
+        "D:\\Desktop\\Data Structure\\project1\\testGamerMap.cpp",
+        "-o",
+        "D:\\Desktop\\Data Structure\\project1\\testGamerMap.exe"
+      ],
+      "options": {
+        "cwd": "D:\\Desktop\\Data Structure"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "build project1 testnewMap",
+      "type": "shell",
+      "command": "C:\\Users\\brack\\.vscode\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=c++17",
+        "-fdiagnostics-color=always",
+        "-g",
+        "D:\\Desktop\\Data Structure\\project1\\newMap.cpp",
+        "D:\\Desktop\\Data Structure\\project1\\testnewMap.cpp",
+        "-o",
+        "D:\\Desktop\\Data Structure\\project1\\testnewMap.exe"
+      ],
+      "options": {
+        "cwd": "D:\\Desktop\\Data Structure"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "build all project1 tests",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "build project1 testMap",
+        "build project1 testGamerMap",
+        "build project1 testnewMap"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
