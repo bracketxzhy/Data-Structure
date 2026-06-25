@@ -1,0 +1,96 @@
+Project 2 Report
+
+Design
+
+I used a circular doubly linked list with a dummy node. The dummy node is not an item
+in the set. When the set is empty, the dummy node points to itself in both directions.
+This made insert and erase simpler because there is no special case for deleting the
+first or last real node.
+
+Each real node stores one ItemType value and two pointers, next and prev. I kept the
+nodes in descending order. Because of that, get(0) returns the greatest value, get(1)
+returns the next greatest value, and so on. The insert function walks through the list
+until it finds the right position. If the value is already there, insert returns false.
+
+The destructor deletes all real nodes and then deletes the dummy node. The copy
+constructor makes new nodes instead of sharing nodes with the original set. The
+assignment operator copies the right hand side into a temporary set and swaps with it,
+so the old nodes are cleaned up when the temporary set is destroyed.
+
+Pseudocode
+
+unite(s1, s2, result):
+  make an empty temporary set
+  go through every item in s1
+    insert it into the temporary set
+  go through every item in s2
+    insert it into the temporary set
+  swap the temporary set with result
+
+inOnlyOne(s1, s2, result):
+  make an empty temporary set
+  go through every item in s1
+    if s2 does not contain it, insert it into the temporary set
+  go through every item in s2
+    if s1 does not contain it, insert it into the temporary set
+  swap the temporary set with result
+
+Using a temporary set matters because result might be the same object as s1 or s2.
+Building the answer first avoids changing one of the input sets while it is still being
+used.
+
+Test Cases
+
+The tests were done with ItemType as std::string.
+
+1. Empty set:
+   Create a new Set. Check that size is 0, empty returns true, contains returns false
+   for a missing value, and erase returns false for a missing value.
+
+2. Insert normal values:
+   Insert several different values. Check that each insert returns true, the size
+   increases, and contains finds the inserted values.
+
+3. Duplicate insert:
+   Insert the same value twice. The second insert should return false and the size
+   should not change.
+
+4. Ordered get:
+   Insert ccc, aaa, and bbb. Check that get(0) returns ccc, get(1) returns bbb, and
+   get(2) returns aaa.
+
+5. Bad positions for get:
+   Call get with -1 and with the current size. It should return false and should not
+   change the output variable.
+
+6. Erase:
+   Insert several values, then erase values from the front, middle, and end of the
+   sorted list. Check that the erased values are gone, the other values are still there,
+   and the size is correct.
+
+7. Copy constructor:
+   Copy a set that has values in it. Change the copy afterward and check that the
+   original set did not change.
+
+8. Assignment operator:
+   Assign one non-empty set to another set that already has different values. The left
+   side should end up with only the right side's values.
+
+9. Self-assignment:
+   Do s = s and check that the set still has the same size and same values.
+
+10. Swap:
+   Swap two sets with different contents and different sizes. Check that each set gets
+   the other's old contents.
+
+11. unite:
+   Use one set with 2, 8, 3, 9, 5 and another with 6, 3, 8, 5, 10. The result should
+   contain 2, 3, 5, 6, 8, 9, and 10, with no duplicates.
+
+12. inOnlyOne:
+   Using the same two sets, the result should contain 2, 6, 9, and 10, because those
+   values appear in only one of the two sets.
+
+13. Aliasing:
+   Test unite(s1, s2, s1) and inOnlyOne(s1, s2, s2). These should still work even
+   though result is also one of the input sets.

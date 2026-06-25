@@ -1,0 +1,42 @@
+Problem 2
+
+The first 12 coordinates popped from the stack are:
+(4,3)
+(3,3)
+(5,3)
+(5,2)
+(5,1)
+(6,1)
+(7,1)
+(8,1)
+(8,2)
+(6,3)
+(4,4)
+(4,5)
+
+Problem 4
+
+The first 12 coordinates popped from the queue are:
+(4,3)
+(4,4)
+(5,3)
+(3,3)
+(4,5)
+(6,3)
+(5,2)
+(4,6)
+(5,5)
+(5,1)
+(4,7)
+(6,5)
+
+Difference between the two algorithms:
+
+The stack version is depth first. It keeps going down one path first, so it will go
+farther before it comes back and tries something else.
+
+The queue version is breadth first. It starts from the same place, but it checks the
+nearby cells first and then moves outward step by step.
+
+So the order comes out different. The stack is more like following one tunnel until it
+stops, and the queue is more like checking the maze layer by layer.
