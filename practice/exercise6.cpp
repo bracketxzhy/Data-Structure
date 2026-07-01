@@ -1,12 +1,10 @@
 #include <iostream>
 using namespace std;
-
 void printheap(int arr[], int n){
 	for (int i = 0; i < n; i++){
-		cout << arr[i];
+		cout << arr[i]<<" ";
 	}
 }
-
 void ins(int arr[], int n, int a){
 	arr[n] = a;
 	int i = n;
@@ -21,7 +19,6 @@ void ins(int arr[], int n, int a){
 		}
 	}
 }
-
 void ext(int arr[], int n){
 	arr[0] = arr[n-1];
 	n--;
@@ -32,7 +29,7 @@ void ext(int arr[], int n){
 		if (left >= n){
 			break;
 		}
-		if (right >= n){
+		else if (right >= n){
 			if (arr[i] < arr[left]){
 				swap(arr[i], arr[left]);
 				i = left;
@@ -56,12 +53,23 @@ void ext(int arr[], int n){
 		}
 	}
 }
-
-
 int main(){
-	int arr[10] = {20, 15, 10, 4, 8};
-	ins(arr, 5, 100);
-	ext(arr,6);
-	printheap(arr, 5);
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int n;
+	cin>>n;
+	int m;
+	cin>>m;
+	int* arr = new int[n];
+	for(int i = 0; i<m; i++){
+		cin>>arr[i];
+	}
+	printheap(arr, m);
+	cout<<endl;
+	ins(arr, m, 100);
+	printheap(arr, m+1);
+	cout<<endl;
+	ext(arr,m+1);
+	printheap(arr, m);
 	return 0;
 }

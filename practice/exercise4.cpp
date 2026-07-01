@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-bool rever( string s){
+bool rever(string s){
 	string t = s;
 	reverse(t.begin(), t.end());
 	return t == s;
@@ -26,6 +26,12 @@ string p(string s){
 }
 
 int main(){
-	cout<< p("aavavvvvvvvv")<<endl;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	string s;
+	getline(cin,s);
+	
+	cout << p(s)<<endl;
 	return 0;
 }

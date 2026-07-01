@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int partition(int arr[], int low, int high){
 	int pivot = arr[low];
 	int p = low;
@@ -28,13 +27,22 @@ void quicksort(int arr[], int first, int last){
 }
 
 int main() {
-	int arr[] = {30, 1, 77, 13, 69, 40, 21};
-	int n = 7;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
 	
-	quicksort(arr, 0, n - 1);
-	for (int i = 0; i < n; i++) {
-		cout << arr[i] << " ";
+	int n;
+	cin>>n;
+	
+	int* arr = new int[n];
+	for(int i=0; i<n; i++){
+		cin>>arr[i];
 	}
-	
+	quicksort(arr,0, n-1);
+	for (int i = 0; i < n; i++) {
+		if (i > 0) cout << " ";
+		cout << arr[i];
+	}
+	cout << '\n';
+	delete[] arr;
 	return 0;
 }

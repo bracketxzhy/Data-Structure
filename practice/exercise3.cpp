@@ -21,5 +21,12 @@ string ID(string s){
 	return ans;
 }
 int main(){
-	cout << ID("IIDDD") << endl;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	string s;
+	getline(cin,s);
+	
+	cout << ID(s)<<endl;
+	return 0;
 }

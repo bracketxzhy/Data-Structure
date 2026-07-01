@@ -26,6 +26,12 @@ int validparentheses(string s){
 }
 
 int main(){
-	cout<<validparentheses("(()")<<endl;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	string s;
+	getline(cin,s);
+	
+	cout << validparentheses(s)<<endl;
 	return 0;
 }
