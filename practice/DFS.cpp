@@ -38,6 +38,9 @@ void postorder(node* root){
 }
 
 int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
 	node* root = new node(1);
 	root->left = new node(2);
 	root->right = new node(3);

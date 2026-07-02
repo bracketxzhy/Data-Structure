@@ -22,7 +22,6 @@ void levelorder(node* root){
 		node* current = q.front();
 		cout<<current -> value<<" ";
 		q.pop();
-		
 		if(! (current->left == nullptr)){
 			q.push(current->left);
 		}

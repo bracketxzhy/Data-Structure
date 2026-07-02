@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-
 string ID(string s){
 	stack<int> index;
 	string ans;

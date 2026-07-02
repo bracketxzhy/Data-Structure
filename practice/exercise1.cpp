@@ -38,10 +38,8 @@ string infix2postfix(string s){
 int main(){
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	
 	string s;
 	getline(cin,s);
-	
 	cout << infix2postfix(s)<<endl;
 	return 0;
 }

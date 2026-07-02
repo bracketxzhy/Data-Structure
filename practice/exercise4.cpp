@@ -11,7 +11,6 @@ bool rever(string s){
 
 string p(string s){
 	string ans;
-	
 	for (int i = 0; i < int(s.length()); i++){
 		for (int j = 0; j <= i; j++){
 			string substring = s.substr(i - j, i);
